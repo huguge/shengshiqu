@@ -14,7 +14,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.yljt.cascadingmenu.R;
-import com.yljt.model.Area;
+import com.yljt.model.Category;
 
 /**
  * 菜单列表List适配器
@@ -23,7 +23,7 @@ public class MenuItemAdapter extends BaseAdapter {
 	// 上下文
 	private Context mContext;
 	// 菜单列表
-	private List<Area> mListData;
+	private List<Category> mListData;
 	private int selectedPos = -1;
 	private String selectedText = "";
 	private int normalDrawbleId;
@@ -32,7 +32,7 @@ public class MenuItemAdapter extends BaseAdapter {
 	private OnClickListener onClickListener;
 	private OnItemClickListener mOnItemClickListener;
 
-	public MenuItemAdapter(Context context, List<Area> listData, int sId,
+	public MenuItemAdapter(Context context, List<Category> listData, int sId,
 			int nId) {
 		mContext = context;
 		mListData = listData;
@@ -69,7 +69,7 @@ public class MenuItemAdapter extends BaseAdapter {
 	/**
 	 * 设置选中的position,但不通知刷新
 	 */
-	public void setSelectedPositionNoNotify(int pos, ArrayList<Area> list) {
+	public void setSelectedPositionNoNotify(int pos, List<Category> list) {
 		selectedPos = pos;
 		mListData = list;
 		if (mListData != null && pos < mListData.size()) {

@@ -1,6 +1,7 @@
 package com.yljt.cascadingmenu;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.yljt.cascadingmenu.interfaces.CascadingMenuViewOnSelectListener;
-import com.yljt.model.Area;
+import com.yljt.model.Category;
 
 /**
  * 级联菜单碎片
@@ -19,7 +20,7 @@ import com.yljt.model.Area;
 public class CascadingMenuFragment extends Fragment {
 
 	private CascadingMenuView cascadingMenuView;
-	private ArrayList<Area> areas = null;
+	private List<Category> categories = null;
 	// 提供给外的接口
 	private CascadingMenuViewOnSelectListener menuViewOnSelectListener;
 	private static CascadingMenuFragment instance = null;
@@ -32,8 +33,8 @@ public class CascadingMenuFragment extends Fragment {
 		return instance;
 	}
 
-	public void setMenuItems(ArrayList<Area> areas) {
-		this.areas = areas;
+	public void setMenuItems(List<Category> categories) {
+		this.categories = categories;
 	}
 
 	public void setMenuViewOnSelectListener(
@@ -45,7 +46,7 @@ public class CascadingMenuFragment extends Fragment {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		// 实例化级联菜单
-		cascadingMenuView = new CascadingMenuView(getActivity(), areas);
+		cascadingMenuView = new CascadingMenuView(getActivity(), categories);
 		// 设置回调接口
 		cascadingMenuView
 				.setCascadingMenuViewOnSelectListener(new MCascadingMenuViewOnSelectListener());
@@ -62,9 +63,9 @@ public class CascadingMenuFragment extends Fragment {
 			CascadingMenuViewOnSelectListener {
 
 		@Override
-		public void getValue(Area area) {
+		public void getValue(Category Category) {
 			if (menuViewOnSelectListener != null) {
-				menuViewOnSelectListener.getValue(area);
+				menuViewOnSelectListener.getValue(Category);
 			}
 		}
 

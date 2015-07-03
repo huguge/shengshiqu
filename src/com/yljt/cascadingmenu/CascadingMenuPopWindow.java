@@ -1,13 +1,14 @@
 package com.yljt.cascadingmenu;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import android.content.Context;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.PopupWindow;
 
 import com.yljt.cascadingmenu.interfaces.CascadingMenuViewOnSelectListener;
-import com.yljt.model.Area;
+import com.yljt.model.Category;
 
 /**
  * @author LILIN 下午1:48:27 提供PopWindow调用方法
@@ -15,13 +16,13 @@ import com.yljt.model.Area;
 public class CascadingMenuPopWindow extends PopupWindow {
 
 	private Context context;
-	private CascadingMenuView cascadingMenuView;
-	private ArrayList<Area> areas = null;
+	private CascadingMenuView cascadingMenuView ;
+	private List<Category> categories = new ArrayList<Category>();
 	// 提供给外的接口
 	private CascadingMenuViewOnSelectListener menuViewOnSelectListener;
 
-	public void setMenuItems(ArrayList<Area> areas) {
-		this.areas = areas;
+	public void setMenuItems(List<Category> categories) {
+		this.categories = categories;
 	}
 
 	public void setMenuViewOnSelectListener(
@@ -29,22 +30,21 @@ public class CascadingMenuPopWindow extends PopupWindow {
 		this.menuViewOnSelectListener = menuViewOnSelectListener;
 	}
 
-	public CascadingMenuPopWindow(Context context, ArrayList<Area> list) {
+	public CascadingMenuPopWindow(Context context, List<Category> list) {
 		super(context);
 		this.context = context;
-		this.areas = list;
+		this.categories = list;
 		init();
 	}
 
 	public void init() {
 		// 实例化级联菜单
-		cascadingMenuView = new CascadingMenuView(context, areas);
+		cascadingMenuView = new CascadingMenuView(context, categories);
 		setContentView(cascadingMenuView);
 		setWidth(LayoutParams.MATCH_PARENT);
 		setHeight(LayoutParams.MATCH_PARENT);
 		// 设置回调接口
-		cascadingMenuView
-				.setCascadingMenuViewOnSelectListener(new MCascadingMenuViewOnSelectListener());
+		cascadingMenuView.setCascadingMenuViewOnSelectListener(new MCascadingMenuViewOnSelectListener());
 	}
 
 	// 级联菜单选择回调接口
@@ -52,7 +52,7 @@ public class CascadingMenuPopWindow extends PopupWindow {
 			CascadingMenuViewOnSelectListener {
 
 		@Override
-		public void getValue(Area menuItem) {
+		public void getValue(Category menuItem) {
 			if (menuViewOnSelectListener != null) {
 				menuViewOnSelectListener.getValue(menuItem);
 				dismiss();
