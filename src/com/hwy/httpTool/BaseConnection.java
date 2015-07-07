@@ -265,8 +265,4 @@ public class BaseConnection {
 		}
 	}	
 	
-	public interface CallBack {
-		// 执行回调方法
-		void executeResult(String result);
-	}
 }

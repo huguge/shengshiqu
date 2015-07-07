@@ -11,7 +11,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -21,7 +20,6 @@ import android.widget.Toast;
 import com.hwy.httpTool.BaseConnection;
 import com.hwy.httpTool.CallBack;
 import com.yljt.cascadingmenu.interfaces.CascadingMenuViewOnSelectListener;
-import com.yljt.model.Area;
 import com.yljt.model.Category;
 
 public class MainActivity extends FragmentActivity implements OnClickListener {

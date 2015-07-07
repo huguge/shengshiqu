@@ -7,49 +7,50 @@
     android:background="@drawable/choosearea_bg_mid"
     android:orientation="horizontal" >
 
-        <ListView
-            android:id="@+id/listView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:cacheColorHint="@color/no_color"
-            android:paddingLeft="4dp"
-            android:paddingStart="4dp"
-            android:paddingRight="0dp"
-            android:paddingEnd="0dp"
-            android:layout_weight="1"
-            android:scrollbars="none"
-            android:dividerHeight="1px"
-            android:divider="#dcdcdc"
-            android:background="@color/white" >
-        </ListView>
-        
-        <ListView
-            android:id="@+id/listView2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:cacheColorHint="@color/no_color"
-            android:paddingLeft="4dp"
-            android:paddingStart="4dp"
-            android:paddingRight="0dp"
-            android:paddingEnd="0dp"
-            android:layout_weight="1"
-            android:scrollbars="none"
-            android:dividerHeight="1px"
-            android:divider="#dcdcdc"
-            android:background="@color/white" >
-        </ListView>
-        <ListView
-            android:id="@+id/listView3"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:cacheColorHint="@color/no_color"
-            android:paddingRight="4dp"
-            android:paddingEnd="4dp"
-            android:paddingLeft="0dp"
-            android:paddingStart="0dp"
-            android:layout_weight="1"
-            android:divider="@null"
-            android:background="@color/choose_eara_item_press_color" >
-        </ListView>
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:cacheColorHint="@color/no_color"
+        android:divider="#dcdcdc"
+        android:dividerHeight="1px"
+        android:paddingEnd="0dp"
+        android:paddingLeft="4dp"
+        android:paddingRight="0dp"
+        android:paddingStart="4dp"
+        android:scrollbars="none" >
+    </ListView>
+
+    <ListView
+        android:id="@+id/listView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:cacheColorHint="@color/no_color"
+        android:divider="#dcdcdc"
+        android:dividerHeight="1px"
+        android:paddingEnd="0dp"
+        android:paddingLeft="4dp"
+        android:paddingRight="0dp"
+        android:paddingStart="4dp"
+        android:scrollbars="none" >
+    </ListView>
+
+    <ListView
+        android:id="@+id/listView3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/choose_eara_item_press_color"
+        android:cacheColorHint="@color/no_color"
+        android:divider="@null"
+        android:paddingEnd="4dp"
+        android:paddingLeft="0dp"
+        android:paddingRight="4dp"
+        android:paddingStart="0dp" >
+    </ListView>
 
 </merge>
